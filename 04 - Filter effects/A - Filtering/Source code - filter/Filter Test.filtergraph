@@ -64,8 +64,8 @@
   <FILTER uid="8" x="0.3847402597402597" y="0.3513513513513514" useARA="0"
           uiLastX_Normal="28" uiLastY_Normal="262" uiopen_Normal="0">
     <PLUGIN name="Tester" format="VST3" category="Fx" manufacturer="yourcompany"
-            version="1.0.0" file="C:\Users\justj\JUCE\MYCODE\Audio-programming-with-VST-and-JUCE\Tester.vst3"
-            uniqueId="f995e4ea" isInstrument="0" fileTime="18ba8ee0409" infoUpdateTime="18d8e53a044"
+            version="1.0.0" file="C:\Users\Joshua Reiss\OneDrive - Queen Mary, University of London\CODE\Audio-programming-with-VST-and-JUCE\Tester.vst3"
+            uniqueId="f995e4ea" isInstrument="0" fileTime="190077865ea" infoUpdateTime="19523c41199"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e9567f7c"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -78,11 +78,11 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="11" x="0.4301948051948052" y="0.5255255255255256" useARA="0"
-          uiLastX_Normal="349" uiLastY_Normal="34" uiopen_Normal="0">
+  <FILTER uid="12" x="0.264" y="0.4979838709677419" useARA="0" uiLastX_Normal="353"
+          uiLastY_Normal="340" uiopen_Normal="0">
     <PLUGIN name="Filter" format="VST3" category="Fx" manufacturer="yourcompany"
-            version="1.0.0" file="C:\Users\justj\JUCE\MYCODE\Audio-programming-with-VST-and-JUCE\04 - Filter effects\A - Filtering\Source code - filter\Filter.vst3"
-            uniqueId="5adebee" isInstrument="0" fileTime="18d8e50c3f0" infoUpdateTime="18d8e53a044"
+            version="1.0.0" file="C:\Users\Joshua Reiss\OneDrive - Queen Mary, University of London\CODE\Audio-programming-with-VST-and-JUCE\04 - Filter effects\A - Filtering\Source code - filter\Filter.vst3"
+            uniqueId="5adebee" isInstrument="0" fileTime="1900778608e" infoUpdateTime="19523c41199"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e95c4ee5"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -95,8 +95,8 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <CONNECTION srcFilter="8" srcChannel="0" dstFilter="11" dstChannel="0"/>
-  <CONNECTION srcFilter="8" srcChannel="1" dstFilter="11" dstChannel="1"/>
-  <CONNECTION srcFilter="11" srcChannel="0" dstFilter="3" dstChannel="0"/>
-  <CONNECTION srcFilter="11" srcChannel="1" dstFilter="3" dstChannel="1"/>
+  <CONNECTION srcFilter="8" srcChannel="0" dstFilter="12" dstChannel="0"/>
+  <CONNECTION srcFilter="8" srcChannel="1" dstFilter="12" dstChannel="1"/>
+  <CONNECTION srcFilter="12" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="12" srcChannel="1" dstFilter="3" dstChannel="1"/>
 </FILTERGRAPH>
