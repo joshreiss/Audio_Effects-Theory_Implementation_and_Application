@@ -1,8 +1,4 @@
-
-#pragma once
-#define _USE_MATH_DEFINES
-#include <cmath>
-using namespace std;
+#include <JuceHeader.h>
 
 float dotProduct(const std::vector<float>& x, const std::vector<float>& y);
 float magnitude(const std::vector<float>& x);
@@ -57,6 +53,22 @@ float AngleBetweenVectors(const std::vector<float>& vector1, const std::vector<f
 	float dot = dotProduct(v1norm, v2norm);
 	float angle = 180 * acos(dot) / juce::MathConstants<float>::pi;
 	if (direction)
-		if (v1norm[0] * v2norm[1] - v1norm[1] * v2norm[0] > 0) angle *= -1;
+	  if (v1norm[0] * v2norm[1] - v1norm[1] * v2norm[0] > 0) angle *= -1;
 	return angle;
+}
+int main()
+{
+	std::vector<float> x{ 3.0, 4.0, 0.0 };
+	std::vector<float> y{ 2.0, 1.0, 0.0 };
+	std::cout << dotProduct(x, y) << '\n';
+	std::cout << magnitude(x) << '\n';
+	std::cout << difference(x, y)[0] << ' ' << difference(x, y)[1] << '\n';
+	std::cout << scale(x, 2.0)[0] << ' ' << scale(x, 2.0)[1] << '\n';
+	std::cout << normalize(x)[0] << ' ' << normalize(x)[1] << '\n';
+	float a = AngleBetweenVectors(x, y, true);
+	float b = AngleBetweenVectors(x, y, false);
+	float c = AngleBetweenVectors(y, x, true);
+	float d = AngleBetweenVectors(y, x, false);
+	std::cout << a << ' ' << b << ' ' << c << ' ' << d << '\n';
+	return 0;
 }

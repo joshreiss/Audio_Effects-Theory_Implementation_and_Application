@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-HelloWorld_v2AudioProcessorEditor::HelloWorld_v2AudioProcessorEditor (HelloWorld_v2AudioProcessor& p)
+PanningAudioProcessorEditor::PanningAudioProcessorEditor (PanningAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
     // Make sure that before the constructor has finished, you've set the
@@ -18,12 +18,12 @@ HelloWorld_v2AudioProcessorEditor::HelloWorld_v2AudioProcessorEditor (HelloWorld
     setSize (400, 300);
 }
 
-HelloWorld_v2AudioProcessorEditor::~HelloWorld_v2AudioProcessorEditor()
+PanningAudioProcessorEditor::~PanningAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void HelloWorld_v2AudioProcessorEditor::paint (juce::Graphics& g)
+void PanningAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
@@ -33,7 +33,7 @@ void HelloWorld_v2AudioProcessorEditor::paint (juce::Graphics& g)
     g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
 }
 
-void HelloWorld_v2AudioProcessorEditor::resized()
+void PanningAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..

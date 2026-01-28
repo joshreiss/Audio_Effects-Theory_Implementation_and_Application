@@ -151,10 +151,10 @@ void PanningAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce:
   auto method = methodParam->getIndex();
   auto panning = panningParam->get();
   // Assume we have these values from the interface
-  std::vector<float>  sourcePosition { 1, 1 };
-  std::vector<float>  listenerPosition { 0, 0 };
+    float sourcePosition[] = { 1, 1 };
+  float listenerPosition[] = { 0, 0 };
   // Directivity parameters
-  std::vector<float>  sourceOrientation { 0, -1 };
+  float sourceOrientation[] = { 0, -1 };
   float coneInnerAngle = 0;
   float coneOuterAngle = 180;
   float coneOuterGain = 0.5;
@@ -164,11 +164,12 @@ void PanningAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce:
   float* channelDataL = buffer.getWritePointer(0);
   float* channelDataR = buffer.getWritePointer(1);
   // Panning parameters
-  std::vector<float> listenerForward{ 0, 1 };
-  std::vector<float> listenerToSource = difference(sourcePosition, listenerPosition);
+  float listenerForward[] = { 0, 1 };
+
+    float* listenerToSource = difference(sourcePosition, listenerPosition);
   /* GAIN FROM SOUND CONE */
   // Find angle between source orientation vector and source-listener vector 
-  std::vector<float> sourceToListener = difference(listenerPosition, sourcePosition);
+  float* sourceToListener = difference(listenerPosition, sourcePosition);
   float angle = AngleBetweenVectors(sourceToListener, sourceOrientation, 0);
   // Compute gain due to sound cone
   float coneGain;
@@ -187,8 +188,8 @@ void PanningAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce:
   /* PANNING */
   // Compute azimuth angle
   float azimuth = AngleBetweenVectors(listenerForward, listenerToSource, 1);
-  float gainLeft = cos((azimuth / 2.0 + 45) * juce::MathConstants<float>::pi / 180.0);
-  float gainRight = sin((azimuth / 2.0 + 45) * juce::MathConstants<float>::pi / 180.0);
+  float gainLeft = cos((azimuth / 2.0 + 45) * M_PI / 180.0);
+  float gainRight = sin((azimuth / 2.0 + 45) * M_PI / 180.0);
 
   for (int sample = 0; sample < numSamples; ++sample) {
       channelDataL[sample] = channelDataL[sample] * gainLeft * distanceGain * coneGain;

@@ -14,11 +14,11 @@
 //==============================================================================
 /**
 */
-class HelloWorld_v2AudioProcessorEditor  : public juce::AudioProcessorEditor
+class PanningAudioProcessorEditor  : public juce::AudioProcessorEditor
 {
 public:
-    HelloWorld_v2AudioProcessorEditor (HelloWorld_v2AudioProcessor&);
-    ~HelloWorld_v2AudioProcessorEditor() override;
+    PanningAudioProcessorEditor (PanningAudioProcessor&);
+    ~PanningAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -27,7 +27,7 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    HelloWorld_v2AudioProcessor& audioProcessor;
+    PanningAudioProcessor& audioProcessor;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (HelloWorld_v2AudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PanningAudioProcessorEditor)
 };
